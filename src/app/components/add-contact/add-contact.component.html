@@ -1,0 +1,27 @@
+<h2>Add Contact</h2>
+
+<form (ngSubmit)="onSave()">
+  <div class="fields">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input type="text" matInput [(ngModel)]="name" name="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="text" matInput [(ngModel)]="email" name="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input type="text" matInput [(ngModel)]="phone" name="phone" />
+    </mat-form-field>
+  </div>
+
+  <div class="actions">
+    <button mat-flat-button type="submit">Save</button>
+    <button mat-raised-button routerLink="/" type="button">Cancel</button>
+  </div>
+</form>
+
+@if (saving()) {
+<mat-progress-spinner mode="indeterminate" />
+}
